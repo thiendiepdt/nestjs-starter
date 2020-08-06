@@ -72,6 +72,7 @@ $ yarn check:ci
 - Jest
 - NestJS Config Service with HapiJoi
 - TypeORM
+- Typegoose + Mongoose
 - Custom Validator (class-validator)
 - Custom Response
 - Inject service, request to Class Validator
