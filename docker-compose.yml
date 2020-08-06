@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   mongo:
-    image: mongo:4.4.0
+    image: mongo:4.2.8-bionic
     ports:
       - ${MONGO_HOST_PORT}:${MONGO_PORT}
     environment:

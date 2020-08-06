@@ -8,6 +8,8 @@ import validationSchema from './configs/validation-schema'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { TypeOrmConfigService } from './databases/typeorm-config.service'
 import { UserModule } from './modules/user/user.module'
+import { TypegooseModule } from 'nestjs-typegoose'
+import { TypegooseConfigService } from './databases/typegoose-config.service'
 
 @Module({
   imports: [
@@ -18,6 +20,9 @@ import { UserModule } from './modules/user/user.module'
     }),
     TypeOrmModule.forRootAsync({
       useClass: TypeOrmConfigService
+    }),
+    TypegooseModule.forRootAsync({
+      useClass: TypegooseConfigService
     }),
     UserModule
   ],
