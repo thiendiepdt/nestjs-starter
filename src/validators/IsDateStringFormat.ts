@@ -10,7 +10,7 @@ export const IsDateStringFormat = (
 ) => {
   return (object: Record<string, any>, propertyName: string): void => {
     registerDecorator({
-      name: 'isArrayType',
+      name: 'isDateStringFormat',
       target: object.constructor,
       propertyName: propertyName,
       constraints: [],
