@@ -1,7 +1,7 @@
 import { registerDecorator, ValidationArguments, ValidationOptions } from 'class-validator'
 import * as moment from 'moment'
 import { MomentFormatSpecification } from 'moment'
-import { MomentFormatEnum } from '../enums/moment-format.enum'
+import { MomentFormatEnum } from '../enums'
 
 export const IsDateStringFormat = (
   format: MomentFormatEnum | MomentFormatSpecification,

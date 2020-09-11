@@ -1,5 +1,5 @@
 import { registerDecorator, ValidationOptions, ValidationArguments } from 'class-validator'
-import { MomentFormatEnum } from '../enums/moment-format.enum'
+import { MomentFormatEnum } from '../enums'
 import * as moment from 'moment'
 import { MomentFormatSpecification } from 'moment'
 
