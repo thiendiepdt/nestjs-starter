@@ -1,10 +1,10 @@
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
 import { useContainer } from 'class-validator'
-import { ValidationContextInterceptor } from './interceptors/validation-context.interceptor'
+import { ValidationContextInterceptor } from './interceptors'
 import { ValidationError, ValidationPipe } from '@nestjs/common'
-import { ValidationException } from './share/exceptions/validation.exception'
-import { StripValidationContextPipe } from './pipes/strip-validation-context.pipe'
+import { ValidationException } from './share/exceptions'
+import { StripValidationContextPipe } from './pipes'
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
 import { ConfigService } from '@nestjs/config'
 

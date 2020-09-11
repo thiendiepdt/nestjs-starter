@@ -1,7 +1,7 @@
 import { IsArray, IsOptional } from 'class-validator'
 import { Transform } from 'class-transformer'
-import { transformArrayNumber, validArrayNumber } from '../../../transforms/dto.transform'
-import { IsArrayType } from '../../../validators/IsArrayType'
+import { transformArrayNumber, validArrayNumber } from '../../../transforms'
+import { IsArrayType } from '../../../validators'
 
 export class UserListDto {
   @IsOptional()

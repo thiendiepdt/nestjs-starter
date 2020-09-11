@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common'
 import { UserEntity } from '../../entities/User.entity'
 import { InjectRepository } from '@nestjs/typeorm'
-import { Repository } from 'typeorm/index'
+import { Repository } from 'typeorm'
 import { UserListDto } from './dtos/user-list.dto'
-import { UserListResponse } from '../../interfaces/responses/user/UserListResponse'
-import { UserListTransform } from '../../transforms/user-list.transform'
+import { UserListResponse } from '../../interfaces/responses/user/user-list.response'
+import { UserListTransform } from '../../transforms'
 
 @Injectable()
 export class UserService {

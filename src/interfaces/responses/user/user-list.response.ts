@@ -1,4 +1,4 @@
-import { GenderEnum, GenderNameEnum } from '../../../enums/gender.enum'
+import { GenderEnum, GenderNameEnum } from '../../../enums'
 
 export interface UserULResponse {
   id: number

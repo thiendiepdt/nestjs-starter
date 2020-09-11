@@ -5,8 +5,9 @@ import { AuthGuard } from '../auth/guards/auth.guard'
 import { UserFavoriteParamDto } from './dtos/user-favorite-param.dto'
 import { User } from '../auth/decorators/user.decorator'
 import { UserEntity } from '../../entities/User.entity'
-import { ApiResponse } from '../../share/api-response'
+import { ApiSuccessResponse } from '../../share/response'
 import { UserListDto } from './dtos/user-list.dto'
+import { UserListResponse } from '../../interfaces/responses/user/user-list.response'
 
 @ApiTags('users')
 @UseGuards(AuthGuard)
@@ -15,13 +16,16 @@ export class UserController {
   constructor(private userService: UserService) {}
 
   @Get('/')
-  async index(@Query() queries: UserListDto): Promise<ApiResponse> {
-    return ApiResponse.create(await this.userService.getUsers(queries))
+  async index(@Query() queries: UserListDto): Promise<ApiSuccessResponse<UserListResponse>> {
+    return ApiSuccessResponse.create(await this.userService.getUsers(queries))
   }
 
   @Get(':id/favorite')
-  async favorite(@Param() { id }: UserFavoriteParamDto, @User() user: UserEntity): Promise<ApiResponse> {
+  async favorite(
+    @Param() { id }: UserFavoriteParamDto,
+    @User() user: UserEntity
+  ): Promise<ApiSuccessResponse<{ favorite: boolean }>> {
     const favorite = await this.userService.favorite(id, user.id)
-    return ApiResponse.create({ favorite: favorite })
+    return ApiSuccessResponse.create({ favorite: favorite })
   }
 }

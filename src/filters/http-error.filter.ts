@@ -1,7 +1,7 @@
 import { ArgumentsHost, Catch, ExceptionFilter, HttpException, Logger, NotFoundException } from '@nestjs/common'
-import { ValidationException } from '../share/exceptions/validation.exception'
+import { ValidationException } from '../share/exceptions'
 import { Request, Response } from 'express'
-import { ErrorResponse } from '../share/error-response'
+import { ApiErrorResponse } from '../share/response'
 import { get } from 'lodash'
 
 @Catch()
@@ -27,7 +27,7 @@ export class HttpErrorFilter implements ExceptionFilter {
       error = exception.getResponse()
     }
 
-    const errorResponse: ErrorResponse = ErrorResponse.create(message, error)
+    const errorResponse: ApiErrorResponse = ApiErrorResponse.create(message, error)
 
     response.status(status).json(errorResponse)
   }

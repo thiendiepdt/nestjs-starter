@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { UserEntity } from '../../entities/User.entity'
 import { Repository } from 'typeorm'
-import { NotFoundEntityException } from '../../share/exceptions/not-found-entity.exception'
+import { NotFoundEntityException } from '../../share/exceptions'
 
 @Injectable()
 export class AuthService {

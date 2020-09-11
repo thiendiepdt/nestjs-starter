@@ -1,14 +1,1 @@
-import { GenderEnum, GenderNameEnum } from '../../enums/gender.enum'
-
-export const getGenderName = (gender: GenderEnum | null): GenderNameEnum | null => {
-  switch (gender) {
-    case GenderEnum.MALE:
-      return GenderNameEnum.MALE
-    case GenderEnum.FEMALE:
-      return GenderNameEnum.FEMALE
-    case GenderEnum.OTHER:
-      return GenderNameEnum.OTHER
-    default:
-      return null
-  }
-}
+export * from './gender.ulti'

@@ -6,10 +6,11 @@ import databaseConfig from './configs/database.config'
 import appConfig from './configs/app.config'
 import validationSchema from './configs/validation-schema'
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { TypeOrmConfigService } from './databases/typeorm-config.service'
+import { TypeOrmConfigService, TypegooseConfigService } from './databases'
 import { UserModule } from './modules/user/user.module'
 import { TypegooseModule } from 'nestjs-typegoose'
-import { TypegooseConfigService } from './databases/typegoose-config.service'
+import { HttpErrorFilter } from './filters'
+import { APP_FILTER } from '@nestjs/core'
 
 @Module({
   imports: [
@@ -27,6 +28,12 @@ import { TypegooseConfigService } from './databases/typegoose-config.service'
     UserModule
   ],
   controllers: [AppController],
-  providers: [AppService]
+  providers: [
+    AppService,
+    {
+      provide: APP_FILTER,
+      useClass: HttpErrorFilter
+    }
+  ]
 })
 export class AppModule {}

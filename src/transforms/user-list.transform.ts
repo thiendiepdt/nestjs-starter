@@ -1,6 +1,6 @@
 import { getGenderName } from '../share/utils'
 import { UserEntity } from '../entities/User.entity'
-import { UserListResponse, UserULResponse } from '../interfaces/responses/user/UserListResponse'
+import { UserListResponse, UserULResponse } from '../interfaces/responses/user'
 import * as moment from 'moment'
 
 export class UserListTransform {
